@@ -29,6 +29,8 @@ export const Layout = (props: LayoutProps) => {
     <div style={{ margin: "5px 10px 10px" }}>
       <Link to="/">Home</Link>
       &nbsp;&nbsp;&nbsp;
+      <Link to="/bootstrap">Bootstrap</Link>
+      &nbsp;&nbsp;&nbsp;
       <hr />
       {props.children}
     </div>
