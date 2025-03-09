@@ -2,8 +2,9 @@ import { useEffect } from "react";
 // import { useAppSelector, useAppDispatch } from "../app/hooks";
 // import moment from "moment";
 // import { incrementHitCountHome } from "../app/appSlice";
-import { Layout } from "../layout/Layout";
+import { BootstrapLayout } from "../layout/BootstrapLayout";
 import Button from 'react-bootstrap/Button';
+import BreakpointHelper from "../comp/BreakpointHelper/BreakpointHelper";
 
 export default function Bootstrap() {
   useEffect(() => {
@@ -11,16 +12,18 @@ export default function Bootstrap() {
   }, []);
 
   return (
-    <Layout>
+    <BootstrapLayout>
       Bootstrap
       <br />
       <br />
-      Bootstrap Sample
+      Bootstrap BreakpointHelper: shows your react-bootstrap breakpoint
+      <br />
+      <BreakpointHelper />
       <br />
       <Button variant="outline-success">
         Close me
       </Button>
-    </Layout>
+    </BootstrapLayout>
   );
 }
   
