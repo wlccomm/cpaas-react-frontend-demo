@@ -7,7 +7,11 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown'
 
-export const BootstrapLayout = (props: LayoutProps) => {
+type BootstrapLayoutProps = {
+  children: React.ReactNode;
+};
+
+export const BootstrapLayout = (props: BootstrapLayoutProps) => {
   return (
     <Container fluid="lg">
       <Row>
@@ -18,6 +22,7 @@ export const BootstrapLayout = (props: LayoutProps) => {
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
                 <Nav.Link as={Link} to="/" >Home</Nav.Link>
+                <Nav.Link as={Link} to="/ping" >Ping</Nav.Link>
                 <Nav.Link as={Link} to="/bootstrap" >Bootstrap</Nav.Link>
                 <Nav.Link href="#link">Link</Nav.Link>
                 <NavDropdown title="Dropdown" id="basic-nav-dropdown">
