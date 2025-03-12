@@ -25,6 +25,7 @@ export default function Ping() {
     <BootstrapLayout>
       Ping
       <br />
+      <br />
       Page purpose:
       <br />
       1. Add to hit counter
