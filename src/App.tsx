@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 // import "./App.css"
 
+import SignIn from "./page/SignIn";
 import Home from "./page/Home";
 import Ping from "./page/Ping";
 import Bootstrap from "./page/Bootstrap";
@@ -11,6 +12,7 @@ const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/signin" element={<SignIn />} />
       <Route path="/ping" element={<Ping />} />
       <Route path="/bootstrap" element={<Bootstrap />} />
       <Route path="*" element={<NotFound />} />

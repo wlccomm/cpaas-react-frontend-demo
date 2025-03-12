@@ -2,7 +2,7 @@ import { useEffect } from "react";
 // import { useAppSelector, useAppDispatch } from "../app/hooks";
 // import moment from "moment";
 // import { incrementHitCountHome } from "../app/appSlice";
-import { Layout } from "../layout/Layout";
+import { BootstrapLayout } from "../layout/BootstrapLayout";
 
 export default function Home() {
   useEffect(() => {
@@ -10,12 +10,11 @@ export default function Home() {
   }, []);
 
   return (
-    <Layout>
+    <BootstrapLayout>
       Home
       <br />
       <br />
       CPaaS Demo App
-    </Layout>
+    </BootstrapLayout>
   );
 }
-  

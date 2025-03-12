@@ -3,10 +3,11 @@ import { combineSlices, configureStore } from "@reduxjs/toolkit"
 import { setupListeners } from "@reduxjs/toolkit/query"
 import { appSlice } from "./appSlice";
 import { apiPing } from "./apiPing";
+import { apiAuth } from "./apiAuth";
 
 // `combineSlices` automatically combines the reducers using
 // their `reducerPath`s, therefore we no longer need to call `combineReducers`.
-const rootReducer = combineSlices(appSlice, apiPing)
+const rootReducer = combineSlices(appSlice, apiPing, apiAuth)
 
 // Infer the `RootState` type from the root reducer
 export type RootState = ReturnType<typeof rootReducer>
@@ -19,7 +20,7 @@ export const makeStore = (preloadedState?: Partial<RootState>) => {
     // Adding the api middleware enables caching, invalidation, polling,
     // and other useful features of `rtk-query`.
     middleware: getDefaultMiddleware => {
-      return getDefaultMiddleware().concat(apiPing.middleware)
+      return getDefaultMiddleware().concat(apiPing.middleware).concat(apiAuth.middleware)
     },
     preloadedState,
   })

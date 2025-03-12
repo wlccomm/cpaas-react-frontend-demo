@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Layout } from "../layout/Layout";
+import { BootstrapLayout } from "../layout/BootstrapLayout";
 
 export default function NotFound() {
   useEffect(() => {
@@ -8,11 +8,11 @@ export default function NotFound() {
   }, []);
 
   return (
-    <Layout>
+    <BootstrapLayout>
       <h2>Nothing to see here!</h2>
       <p>
         <Link to="/">Go to the home page</Link>
       </p>
-    </Layout>
+    </BootstrapLayout>
   );
 }
