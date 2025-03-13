@@ -5,6 +5,7 @@ import SignIn from "./page/SignIn";
 import Home from "./page/Home";
 import Ping from "./page/Ping";
 import Bootstrap from "./page/Bootstrap";
+import Protected from "./page/Protected";
 import NotFound from "./page/NotFound";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -15,6 +16,7 @@ const App = () => {
       <Route path="/signin" element={<SignIn />} />
       <Route path="/ping" element={<Ping />} />
       <Route path="/bootstrap" element={<Bootstrap />} />
+      <Route path="/protected" element={<Protected />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   )

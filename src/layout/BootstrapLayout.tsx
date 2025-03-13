@@ -25,6 +25,7 @@ export const BootstrapLayout = (props: BootstrapLayoutProps) => {
                 <Nav.Link as={Link} to="/ping" >Ping</Nav.Link>
                 <Nav.Link as={Link} to="/bootstrap" >Bootstrap</Nav.Link>
                 <Nav.Link as={Link} to="/signin" >Signin</Nav.Link>
+                <Nav.Link as={Link} to="/protected" >Protected</Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Container>
