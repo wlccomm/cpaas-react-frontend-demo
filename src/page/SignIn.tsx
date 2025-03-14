@@ -1,18 +1,16 @@
 import { useEffect, useState } from "react";
+import { useNavigate, useLocation } from 'react-router-dom';
 import useSignIn from 'react-auth-kit/hooks/useSignIn';
-// import axios from 'axios'
-// import moment from "moment";
-// import { useAppSelector, useAppDispatch } from "../app/hooks";
-// import { incrementHitCountHome } from "../app/appSlice";
 import { BootstrapLayout } from "../layout/BootstrapLayout";
 import { useLoginMutation } from "../app/apiAuth";
-
 
 export default function SignIn() {
   useEffect(() => {
     document.title = "Signin";
   }, []);
 
+  const navigate = useNavigate();
+  const location = useLocation();
   const signIn = useSignIn()
   const [formData, setFormData] = useState({ username: '', password: '' })
   const [login] = useLoginMutation();
@@ -36,8 +34,11 @@ export default function SignIn() {
           uid: 123456
         }
       })) {
-        // Redirect or do-something
         console.error("signIn OK")
+        console.log(location)
+        const redirectTo = location.state?.from?.pathname || '/';
+        console.log(redirectTo)
+        navigate(redirectTo, { replace: true });
       } else {
         //Throw error
         console.error("signIn not OK")
@@ -52,26 +53,7 @@ export default function SignIn() {
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     console.log(formData)
-    // postLoginData({ username: "glownes@whitelabelcomm.com", password: "password123" })
     postLoginData(formData)
-
-    // axios.post('/api/login', formData)
-    //   .then((res) => {
-    //     if (res.status === 200) {
-    //       if (signIn({
-    //         auth: {
-    //           token: res.data.token,
-    //           type: 'Bearer'
-    //         },
-    //         refresh: res.data.refreshToken
-    //                     userState: res.data.authUserState
-    //       })) { // Only if you are using refreshToken feature
-    //         // Redirect or do-something
-    //       } else {
-    //         //Throw error
-    //       }
-    //     }
-    //   })
   }
 
   return (

@@ -1,5 +1,4 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { useAuthToken } from 'react-auth-kit';
 
 export const apiAuth = createApi({
   reducerPath: "apiAuth",
