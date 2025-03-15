@@ -30,8 +30,8 @@ export default function SignIn() {
         },
         // refresh: response.data.refreshToken,
         userState: {
-          name: 'React User',
-          uid: 123456
+          name: data.username
+          // uid: 123456
         }
       })) {
         console.error("signIn OK")
